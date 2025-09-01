@@ -1,0 +1,28 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: red;
+}
+
+.card {
+  width: 700px;
+  background-color: #ccc;
+  padding: 20px;
+  margin: 20px;
+  font-family: sans-serif;
+}
+
+::-webkit-scrollbar {
+  background-color: rgb(240, 255, 241);
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(55, 0, 0);
+  border-radius: 100px;
+}
