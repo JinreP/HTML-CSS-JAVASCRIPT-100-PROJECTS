@@ -22,14 +22,27 @@
       function updateClock() {
         const now = new Date();
         let hours = now.getHours();
+        let rawHours = hours;
+        let displayHours = rawHours;
+        let ampm;
+        if (displayHours > 12) {
+          displayHours = displayHours - 12;
+        }
+        if (displayHours === 0) {
+          displayHours = 12;
+        }
         let minutes = now.getMinutes();
         let seconds = now.getSeconds();
-        if (hours < 10) hours = "0" + hours;
+        if (displayHours < 10) displayHours = "0" + displayHours;
         if (minutes < 10) minutes = "0" + minutes;
         if (seconds < 10) seconds = "0" + seconds;
-
+        if (rawHours < 12) {
+          ampm = "AM";
+        } else {
+          ampm = "PM";
+        }
         document.getElementById("clock").textContent =
-          hours + ":" + minutes + ":" + seconds;
+          displayHours + ":" + minutes + ":" + seconds + " " + ampm;
       }
 
       updateClock();
