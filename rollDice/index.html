@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roll Dice</title>
+  </head>
+  <style>
+    #dice {
+      font-size: 80px;
+      text-align: center;
+      margin: 20px;
+      color: #39ff14;
+      text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 40px #39ff14;
+    }
+
+    #roll {
+      display: block;
+      margin: 0 auto;
+      padding: 12px 24px;
+      font-size: 20px;
+      font-weight: bold;
+      background: black;
+      color: #39ff14;
+      border: 2px solid #39ff14;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    #roll:hover {
+      background: #39ff14;
+      color: black;
+      box-shadow: 0 0 20px #39ff14;
+    }
+  </style>
+  <body>
+    <div id="dice">🎲</div>
+    <button id="roll">Roll</button>
+    <script>
+      function rollDice() {
+        const dice = document.getElementById("dice");
+        const roll = document.getElementById("roll");
+        const emojis = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+        let max = 6;
+        let min = 1;
+        roll.addEventListener("click", function sda() {
+          let randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+
+          dice.textContent = emojis[randomNum - 1];
+          console.log("clicked");
+        });
+      }
+      rollDice();
+    </script>
+  </body>
+</html>
