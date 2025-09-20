@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  gap: 5;
+}
+
+p {
+  font-size: 24px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+button {
+  padding: 10px 20px;
+}
