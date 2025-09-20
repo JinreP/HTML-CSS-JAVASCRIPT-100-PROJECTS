@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date</title>
+  </head>
+  <style>
+    #date {
+      font-size: 26px;
+      font-family: monospace;
+      color: #39ff14;
+      text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+  </style>
+  <body>
+    <div id="date"></div>
+    <script>
+      function dateNow() {
+        let now = new Date();
+        let years = now.getFullYear();
+        let months = now.getMonth() + 1;
+        let days = now.getDate();
+
+        document.getElementById("date").textContent =
+          years + "-" + months + "-" + days;
+      }
+      dateNow();
+    </script>
+  </body>
+</html>
