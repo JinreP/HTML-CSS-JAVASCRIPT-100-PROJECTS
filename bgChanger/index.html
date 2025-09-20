@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background Changer</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh; /* full screen height */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      transition: background 0.4s ease; /* smooth fade */
+    }
+
+    #box {
+      background: rgba(255, 255, 255, 0.7);
+      padding: 15px 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
+    }
+
+    #text {
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    #color {
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: black;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    #color:hover {
+      background: white;
+      color: black;
+      border: 2px solid black;
+    }
+  </style>
+  <body>
+    <div id="box">
+      <p id="text">dsadas</p>
+    </div>
+    <button id="color">Change color</button>
+    <script>
+      const color = document.getElementById("color");
+      const text = document.getElementById("text");
+
+      color.addEventListener("click", function () {
+        let r = Math.floor(Math.random() * 256);
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+        let colors = [r, g, b];
+        let rgbColor = "rgb(" + colors.join(",") + ")";
+        document.body.style.backgroundColor = rgbColor;
+        text.textContent = rgbColor;
+      });
+    </script>
+  </body>
+</html>
