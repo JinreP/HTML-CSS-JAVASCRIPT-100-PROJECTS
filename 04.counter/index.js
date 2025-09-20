@@ -38,6 +38,7 @@ function updadeColor() {
 increaseBtn.addEventListener("click", increase);
 decreaseBtn.addEventListener("click", decrease);
 resetBtn.addEventListener("click", reset);
+
 document.addEventListener("keydown", function (event) {
   if (event.key === "ArrowUp") {
     increase();
