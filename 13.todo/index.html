@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    #taskInput {
+      padding: 10px;
+      width: 250px;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    #taskInput:focus {
+      border-color: #4caf50;
+    }
+
+    #addBtn {
+      padding: 10px 16px;
+      margin-left: 10px;
+      font-size: 16px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    #addBtn:hover {
+      background-color: #45a049;
+    }
+
+    ul {
+      margin-top: 20px;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      background: white;
+      margin-bottom: 8px;
+      padding: 12px 14px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 16px;
+    }
+  </style>
+
+  <body>
+    <h1>My To-Do List</h1>
+
+    <input type="text" id="taskInput" placeholder="Enter a task..." />
+    <button id="addBtn">Add</button>
+    <ul id="list"></ul>
+
+    <script>
+      const taskInput = document.getElementById("taskInput");
+      const addBtn = document.getElementById("addBtn");
+      const list = document.getElementById("list");
+      const deleteBtn = document.getElementById("deleteBtn");
+
+      addBtn.addEventListener("click", function () {
+        let task = taskInput.value.trim();
+        if (task === "") return;
+        let li = document.createElement("li");
+        li.textContent = task;
+        list.appendChild(li);
+        taskInput.value = "";
+      });
+    </script>
+  </body>
+</html>
