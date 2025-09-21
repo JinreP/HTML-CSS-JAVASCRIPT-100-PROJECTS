@@ -38,20 +38,24 @@
     <div id="dice">🎲</div>
     <button id="roll">Roll</button>
     <script>
-      function rollDice() {
-        const dice = document.getElementById("dice");
-        const roll = document.getElementById("roll");
-        const emojis = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
-        let max = 6;
-        let min = 1;
-        roll.addEventListener("click", function sda() {
-          let randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+      const dice = document.getElementById("dice");
+      const roll = document.getElementById("roll");
+      let emojis = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+      let emoji2 = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
 
-          dice.textContent = emojis[randomNum - 1];
-          console.log("clicked");
-        });
-      }
-      rollDice();
+      roll.addEventListener("click", function () {
+        let roll1 = Math.floor(Math.random() * 6) + 1;
+        let roll2 = Math.floor(Math.random() * 6) + 1;
+
+        let sum = roll1 + roll2;
+
+        dice.textContent =
+          emojis[roll1 - 1] +
+          " " +
+          emoji2[roll2 - 1] +
+          " sum of these 2 is :" +
+          sum;
+      });
     </script>
   </body>
 </html>
