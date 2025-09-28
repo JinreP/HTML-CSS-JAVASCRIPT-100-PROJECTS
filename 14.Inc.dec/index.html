@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Increase Decrease</title>
+  </head>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 40px;
+    }
+
+    button {
+      background: #4f46e5;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      margin: 0 8px;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #3730a3;
+    }
+
+    #Reset {
+      background: #ef4444;
+    }
+
+    #Reset:hover {
+      background: #b91c1c;
+    }
+  </style>
+
+  <body>
+    <h1 id="text">0</h1>
+    <button id="Increase">Increase</button>
+    <button id="Reset">Reset</button>
+    <button id="Decrease">Decrease</button>
+    <script>
+      const increase = document.getElementById("Increase");
+      const reset = document.getElementById("Reset");
+      const decrease = document.getElementById("Decrease");
+      const text = document.getElementById("text");
+      let count = 0;
+
+      increase.addEventListener("click", function () {
+        count++;
+        text.textContent = count;
+      });
+      decrease.addEventListener("click", function () {
+        count--;
+        text.textContent = count;
+      });
+      reset.addEventListener("click", function () {
+        count = 0;
+        text.textContent = count;
+      });
+    </script>
+  </body>
+</html>

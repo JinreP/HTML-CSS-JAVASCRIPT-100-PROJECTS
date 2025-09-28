@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Number</title>
+  </head>
+  <body>
+    <h2 id="text">Guess the number</h2>
+    <button id="guess">Click here</button>
+    <h3 id="answer"></h3>
+    <script>
+      const text = document.getElementById("text");
+      const guess = document.getElementById("guess");
+      const answer = document.getElementById("answer");
+      let number = 1;
+      guess.addEventListener("click", function () {
+        const number = Math.floor(Math.random() * 10) + 1;
+        let userGuess = Number(prompt("Enter your guess (1-10):"));
+
+        while (userGuess !== number) {
+          if (userGuess < number) answer.textContent = "Too low — try again!";
+          else if (userGuess > number)
+            answer.textContent = "Too high — try again!";
+          else answer.textContent = "✅ Correct!";
+          userGuess = Number(prompt("Enter your guess (1-10):"));
+        }
+
+        answer.textContent = "✅ Correct! The number was " + number;
+        console.log("Secret number:", number);
+      });
+    </script>
+  </body>
+</html>

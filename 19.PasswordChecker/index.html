@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Checker</title></head
+  ><style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f9fafb;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    input {
+      padding: 10px;
+      width: 250px;
+      font-size: 1.1rem;
+      border: 2px solid #d1d5db;
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    input:focus {
+      border-color: #2563eb;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+  </style>
+
+  <body>
+    <input type="password" id="input" />
+    <p id="text"></p>
+    <script>
+      const input = document.getElementById("input");
+      const text = document.getElementById("text");
+
+      input.addEventListener("input", function () {
+        if (input.value.length >= 8) {
+          text.textContent = "Good password";
+        } else if (input.value.length < 8 && input.value.length > 5) {
+          text.textContent = "Medium password";
+        } else {
+          text.textContent = "Weak password";
+        }
+      });
+    </script>
+  </body>
+</html>

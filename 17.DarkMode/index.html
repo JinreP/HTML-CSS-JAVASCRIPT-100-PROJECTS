@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark & Light mode</title>
+  </head>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    button {
+      background: #2563eb; /* blue */
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+  </style>
+
+  <body>
+    <button id="color">Change Theme</button>
+    <script>
+      const color = document.getElementById("color");
+      let dark = false;
+
+      color.addEventListener("click", function () {
+        dark = !dark;
+        if (dark === true) {
+          document.body.style.backgroundColor = "black";
+          color.textContent = "Dark mode";
+        } else {
+          document.body.style.backgroundColor = "white";
+          color.textContent = "Light mode";
+        }
+      });
+    </script>
+  </body>
+</html>
