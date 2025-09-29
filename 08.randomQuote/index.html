@@ -57,31 +57,31 @@
       const quote = document.getElementById("quote");
       const newQuote = document.getElementById("newQuote");
       const quotes = [
-        {
-          text: "The best way to get started is to quit talking and begin doing.",
-          author: "Walt Disney",
-        },
-        {
-          text: "Don’t let yesterday take up too much of today.",
-          author: "Will Rogers",
-        },
-        {
-          text: "It’s not whether you get knocked down, it’s whether you get up.",
-          author: "Vince Lombardi",
-        },
-        {
-          text: "If you are working on something exciting, it will keep you motivated.",
-          author: "Steve Jobs",
-        },
-        {
-          text: "Success doesn’t come overnight, it comes with consistency.",
-          author: "Unknown",
-        },
+        "Believe you can and you're halfway there.",
+        "Do something today that your future self will thank you for.",
+        "Dream big and dare to fail.",
+        "Don’t watch the clock; do what it does. Keep going.",
+        "The harder you work for something, the greater you’ll feel when you achieve it.",
+        "Push yourself, because no one else is going to do it for you.",
+        "Great things never come from comfort zones.",
+        "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+        "Your limitation—it’s only your imagination.",
+        "Sometimes later becomes never. Do it now.",
+        "Little things make big days.",
+        "It’s going to be hard, but hard does not mean impossible.",
+        "Don’t wait for opportunity. Create it.",
+        "Success doesn’t just find you. You have to go out and get it.",
+        "Dream it. Wish it. Do it.",
+        "Stay focused and never give up.",
+        "Good things happen to those who hustle.",
+        "Wake up with determination. Go to bed with satisfaction.",
+        "If you get tired, learn to rest, not to quit.",
+        "Believe in yourself and all that you are.",
       ];
 
       newQuote.addEventListener("click", function () {
-        let randomQuotes = Math.floor(Math.random() * quotes.length);
-        quote.textContent = `"${quotes[randomQuotes].text}" — ${quotes[randomQuotes].author}`;
+        let randomQuote = Math.floor(Math.random() * quotes.length);
+        quote.textContent = quotes[randomQuote];
       });
     </script>
   </body>
