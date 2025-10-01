@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+  </head>
+  <body>
+    <h2 id="question"></h2>
+    <div id="options"></div>
+    <p id="score"></p>
+    <button id="next">Next</button>
+
+    <script>
+      const questions = [
+        { q: "What is 2+2?", options: ["3", "4", "5"], answer: "4" },
+        {
+          q: "Capital of France?",
+          options: ["Rome", "Paris", "Berlin"],
+          answer: "Paris",
+        },
+      ];
+
+      let current = 0;
+      let score = 0;
+      const question = document.getElementById("question");
+      const options = document.getElementById("options");
+      const scores = document.getElementById("score");
+      const next = document.getElementById("next");
+
+      question.textContent = question[current].q;
+      // Your job:
+      // 1. show questions[current].q in #question
+      // 2. build option buttons inside #options
+      // 3. when clicked, check correct, increase score if right
+      // 4. on #next click, move to next question or end quiz
+    </script>
+  </body>
+</html>
