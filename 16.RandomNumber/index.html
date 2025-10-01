@@ -9,25 +9,37 @@
     <h2 id="text">Guess the number</h2>
     <button id="guess">Click here</button>
     <h3 id="answer"></h3>
+    <h2 id="count"></h2>
+
     <script>
       const text = document.getElementById("text");
       const guess = document.getElementById("guess");
       const answer = document.getElementById("answer");
-      let number = 1;
+      const count = document.getElementById("count");
+
+      let randomNumber = Math.floor(Math.random() * 100) + 1;
+      let attemps = 0;
       guess.addEventListener("click", function () {
-        const number = Math.floor(Math.random() * 10) + 1;
-        let userGuess = Number(prompt("Enter your guess (1-10):"));
+        text.textContent = "Guess the number ";
+        guess.textContent = "Click here";
+        let user = Number(prompt("Enter you're number"));
+        attemps++;
 
-        while (userGuess !== number) {
-          if (userGuess < number) answer.textContent = "Too low — try again!";
-          else if (userGuess > number)
-            answer.textContent = "Too high — try again!";
-          else answer.textContent = "✅ Correct!";
-          userGuess = Number(prompt("Enter your guess (1-10):"));
+        if (user > randomNumber) {
+          answer.textContent = "Wrong answer that's too high";
+        } else if (user < randomNumber) {
+          answer.textContent = "Wrong answer that's too low";
+        } else {
+          answer.textContent = "Correct answer!!";
+          count.textContent = "You guessed in " + attemps + " tries";
+          text.textContent = "Try again? ";
+          guess.textContent = "CLICK HERE TO START AGAIN";
+          attemps = 0;
+          guess.disabled = false;
         }
-
-        answer.textContent = "✅ Correct! The number was " + number;
-        console.log("Secret number:", number);
+        if (attemps > 5) {
+          guess.disabled = true;
+        }
       });
     </script>
   </body>

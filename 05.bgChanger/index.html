@@ -50,21 +50,33 @@
   </style>
   <body>
     <div id="box">
-      <p id="text">dsadas</p>
+      <p id="text"></p>
     </div>
     <button id="color">Change color</button>
     <script>
+      const colors = [
+        "red",
+        "blue",
+        "green",
+        "yellow",
+        "purple",
+        "orange",
+        "pink",
+        "aqua",
+        "lime",
+        "teal",
+        "gold",
+        "indigo",
+      ];
       const color = document.getElementById("color");
       const text = document.getElementById("text");
 
       color.addEventListener("click", function () {
-        let r = Math.floor(Math.random() * 256);
-        let g = Math.floor(Math.random() * 256);
-        let b = Math.floor(Math.random() * 256);
-        let colors = [r, g, b];
-        let rgbColor = "rgb(" + colors.join(",") + ")";
-        document.body.style.backgroundColor = rgbColor;
-        text.textContent = rgbColor;
+        let random = Math.floor(Math.random() * colors.length);
+        text.textContent = colors[random];
+        document.body.style.backgroundColor = colors[random];
+        console.log(random);
+        color.textContent = "Change again";
       });
     </script>
   </body>

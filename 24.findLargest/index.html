@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find the largest</title>
+  </head>
+  <body>
+    <button id="Add">Add a number</button>
+    <script>
+      const Add = document.getElementById("Add");
+      const numbers = [3, 7, 2, 9, 100, 5];
+      Add.addEventListener("click", function () {
+        let ask = Number(prompt("Enter you're number"));
+        let largest = numbers[0];
+        for (let i = 0; i < numbers.length; i++) {
+          if (numbers[i] > largest) {
+            largest = numbers[i];
+          }
+        }
+        if (ask > largest) {
+          alert("Your number is bigger than the largest in the array!");
+        } else {
+          alert("Your number is NOT bigger than the largest.");
+        }
+        document.body.innerHTML = `Largest is: ${largest}`;
+
+        console.log("largest is : " + largest);
+      });
+    </script>
+  </body>
+</html>
